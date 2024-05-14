@@ -2,9 +2,6 @@ close all
 clear
 clc
 
-% load D:/papers/G-LDP/code/Dataset/EC.mat
-pdelta=0.001;
-rdelta=0.00001;
 
 % E=[0.001,0.002,0.005,0.01,0.02,0.05,0.1];
 E=1.8
