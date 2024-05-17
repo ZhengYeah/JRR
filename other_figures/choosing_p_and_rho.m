@@ -28,7 +28,7 @@ xline(exp(1) / (1 + exp(1)), LineWidth=2);
 set(gca,'FontSize',20, 'FontName', 'Times New Roman');
 xlabel('Probability $p$',FontWeight='bold',Interpreter='latex') 
 ylabel('Correlation $\rho$',FontWeight='bold',Interpreter='latex') 
-
+legend("RR","JRR")
 
 hold off;
 
