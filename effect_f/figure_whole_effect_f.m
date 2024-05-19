@@ -35,7 +35,7 @@ end
 re_pro2=mean(pro,2);
 re_rr2=mean(rr,2);
 
-load ./whole_f_n10k.mat
+load ./whole_f_n8k.mat
 n1=n.*F;
 n0=n-n1;
 var_pro_e(3,:)=gldp;
@@ -92,7 +92,7 @@ ylabel("MSE")
 ax = gca;
 ax.YAxis.Exponent = 3;
 set(gca,'Fontsize',20,'Fontname','Times New Roman')
-print -vector -dpdf -r300 f_n10k.pdf
+print -vector -dpdf -r300 f_n8k.pdf
 
 
 
