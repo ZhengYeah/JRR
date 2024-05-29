@@ -36,62 +36,6 @@ i_rr=[mean(i_rr_e(1,:)),mean(i_rr_e(2,:)),mean(i_rr_e(3,:)),mean(i_rr_e(4,:))];
 ec_pro=[mean(ec_pro_e(1,:)),mean(ec_pro_e(2,:)),mean(ec_pro_e(3,:)),mean(ec_pro_e(4,:))];
 ec_rr=[mean(ec_rr_e(1,:)),mean(ec_rr_e(2,:)),mean(ec_rr_e(3,:)),mean(ec_rr_e(4,:))];
 
-%% epsilon = 0.001
-% Err=0:10:150;
-% for i=1:size(Err,2)
-%     if size(find(a_pro_e(1,:)<Err(i)),2)/1000 <= 0.98
-%         cdf_a_pro_e01(i)=size(find(a_pro_e(1,:)<Err(i)),2)/1000;
-%     end
-%     if size(find(a_rr_e(1,:)<Err(i)),2)/1000 <= 0.98
-%         cdf_a_rr_e01(i)=size(find(a_rr_e(1,:)<Err(i)),2)/1000;
-%     end
-%     if size(find(i_pro_e(1,:)<Err(i)),2)/1000 <= 0.98
-%         cdf_i_pro_e01(i)=size(find(i_pro_e(1,:)<Err(i)),2)/1000;
-%     end
-%     if size(find(i_rr_e(1,:)<Err(i)),2)/1000 <= 0.98
-%         cdf_i_rr_e01(i)=size(find(i_rr_e(1,:)<Err(i)),2)/1000;
-%     end
-%     if size(find(k_pro_e(1,:)<Err(i)),2)/1000 <= 0.98
-%         cdf_k_pro_e01(i)=size(find(k_pro_e(1,:)<Err(i)),2)/1000;
-%     end
-%     if size(find(k_rr_e(1,:)<Err(i)),2)/1000 <= 0.98
-%         cdf_k_rr_e01(i)=size(find(k_rr_e(1,:)<Err(i)),2)/1000;
-%     end
-%     if size(find(ec_pro_e(1,:)<Err(i)),2)/1000 <= 0.98
-%         cdf_ec_pro_e01(i)=size(find(ec_pro_e(1,:)<Err(i)),2)/1000;
-%     end
-%     if size(find(ec_rr_e(1,:)<Err(i)),2)/1000 <= 0.98
-%         cdf_ec_rr_e01(i)=size(find(ec_rr_e(1,:)<Err(i)),2)/1000;
-%     end
-% end
-% 
-% plot(cdf_k_pro_e01,Err(1:length(cdf_k_pro_e01)),'-','Color',[0 0 1],'LineWidth',2,'Markersize',5)
-% hold on
-% plot(cdf_k_rr_e01,Err(1:length(cdf_k_rr_e01)),'--','Color',[0 0 1 0.4],'LineWidth',2,'Markersize',5)
-% hold on
-% plot(cdf_a_pro_e01,Err(1:length(cdf_a_pro_e01)),'-','Color',[1 0 0],'LineWidth',2,'Markersize',5)
-% hold on
-% plot(cdf_a_rr_e01,Err(1:length(cdf_a_rr_e01)),'--','Color',[1 0 0 0.4],'LineWidth',2,'Markersize',5)
-% hold on
-% plot(cdf_ec_pro_e01,Err(1:length(cdf_ec_pro_e01)),'-m','LineWidth',2,'Markersize',8)
-% hold on
-% plot(cdf_ec_rr_e01,Err(1:length(cdf_ec_rr_e01)),'--','Color',[1 0 1 0.4],'LineWidth',2,'Markersize',8)
-% hold on
-% plot(cdf_i_pro_e01,Err(1:length(cdf_i_pro_e01)),'-g','LineWidth',2,'Markersize',8)
-% hold on
-% plot(cdf_i_rr_e01,Err(1:length(cdf_i_rr_e01)),'--','Color',[0 1 0 0.4],'LineWidth',2,'Markersize',8)
-% hold on
-% 
-% h=legend("JRR Kosarak","RR Kosarak","JRR Amazon","RR Amazon",...
-%     "JRR EC","RR EC","JRR Census","RR Census",'location','northwest');
-% xlabel("Percentile")
-% ylabel("Relative Error")
-% set(gca,'Fontsize',20)
-% set(h,'Fontsize',15)
-% set(gca,'Fontname','Times New Roman')
-% 
-% print -vector -dpdf -r500 percentile_e0001.pdf
-
 
 %% epsilon = 0.01
 figure
