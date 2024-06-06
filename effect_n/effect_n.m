@@ -4,14 +4,17 @@ clc
 
 addpath('../')
 e=1;
-n_set=[20, 200, 2000, 20000,200000];
+n_set=[20, 200, 2000, 20000,200000,2000000];
 
 f=1;
 TESTNUM=1000;
+pdelta=0.0001;
+rdelta=0.0001;
+M=5;
+
 
 for i=1:length(n_set)
     n=n_set(1,i);
-    M=0.01*n;
     idx=randperm(n);
     raw_data=zeros(n,1);
     n1=floor(n*f);
@@ -33,7 +36,7 @@ for i=1:length(n_set)
     est_rr0(i,:)=a_est0;
     var_RR(i)=(sum((a_est1-n1).^2)/TESTNUM+sum((a_est0-n0).^2)/TESTNUM)*0.5;
     %% CRRM
-    [p,rho]=cal_p_rho(e);
+    [p,rho]=cal_p_rho2(e,n,pdelta,rdelta,M);
     q=1-p;
     gldp(i)=p*q*n/((p-q)^2)+p*q*rho*n/((p-q)^2)*((n*(2*f-1)^2-1)/(n-1));
     p15=p-sqrt(-rho*p*q);

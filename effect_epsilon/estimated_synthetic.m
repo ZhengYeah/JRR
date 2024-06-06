@@ -4,8 +4,9 @@ clc
 
 addpath('../');
 %% parameters
-E=[0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1];
-n=80000;
+% E=[0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1];
+E=[0.01, 0.02, 0.05, 0.1,0.2, 0.5, 1];
+n=10000;
 f=1;
 
 n1=floor(n*f);
@@ -16,6 +17,9 @@ raw_data=zeros(n,1);
 raw_data(idx(1:n1),1)=1;
 
 TESTNUM=1000; 
+pdelta=0.0003;
+rdelta=0.0003;
+M=5;
 
 for i=1:length(E)
     %% RR
@@ -33,7 +37,7 @@ for i=1:length(E)
     var_RR(i)=(sum((a_est1-n1).^2)/TESTNUM+sum((a_est0-n0).^2)/TESTNUM)*0.5;
 
     %% CRRM
-    [p,rho]=cal_p_rho(e)
+    [p,rho]=cal_p_rho2(e,n,pdelta,rdelta,M)
     q=1-p;
     gldp(i)=p*q*n/((p-q)^2)+p*q*rho*n/((p-q)^2)*((n*(2*f-1)^2-1)/(n-1));
 
@@ -66,6 +70,6 @@ end
 % save ./estimated_n40k_f01.mat var_RR var_pro est_pro0 est_pro1 est_rr0 est_rr1 ldp gldp n1 n0
 % save ./estimated_n80k_f01.mat var_RR var_pro est_pro0 est_pro1 est_rr0 est_rr1 ldp gldp n1 n0
 
-% save ./estimated_n10k_f1.mat var_RR var_pro est_pro0 est_pro1 est_rr0 est_rr1 ldp gldp n1 n0
+save ./estimated_n10k_f1.mat var_RR var_pro est_pro0 est_pro1 est_rr0 est_rr1 ldp gldp n1 n0
 % save ./estimated_n40k_f1.mat var_RR var_pro est_pro0 est_pro1 est_rr0 est_rr1 ldp gldp n1 n0
-save ./estimated_n80k_f1.mat var_RR var_pro est_pro0 est_pro1 est_rr0 est_rr1 ldp gldp n1 n0
+% save ./estimated_n80k_f1.mat var_RR var_pro est_pro0 est_pro1 est_rr0 est_rr1 ldp gldp n1 n0

@@ -2,6 +2,7 @@ close all
 clear
 clc
 
+
 e = exp(1);
 %% m/n affects the result
 n = 80000;

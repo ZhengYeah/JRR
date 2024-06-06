@@ -12,6 +12,10 @@ n0=n-n1;
 f=n1/n;
 TESTNUM=1000;
 
+pdelta=0.0001;
+rdelta=0.0001;
+M=5;
+
 for i=1:length(E)
     %% RR
     e=E(i);
@@ -28,7 +32,7 @@ for i=1:length(E)
     var_RR(i)=(sum((a_est1-n1).^2)/TESTNUM+sum((a_est0-n0).^2)/TESTNUM)*0.5;
     
     %% CRRM
-    [p,rho]=cal_p_rho(e);
+    [p,rho]=cal_p_rho2(e,n,pdelta,rdelta,M);
     q=1-p;
     gldp(i)=p*q*n/((p-q)^2)+p*q*rho*n/((p-q)^2)*((n*(2*f-1)^2-1)/(n-1));
     

@@ -5,10 +5,13 @@ clc
 addpath('../')
 f_set=[0,0.01,0.1,0.2,0.3,0.4,0.45,0.475,0.5,0.525,0.55,0.6,0.7,0.8,0.9,0.99,1];
 
-n=8000;
-e=1;
+n=80000;
+e=0.1;
 
 TESTNUM=1000;
+pdelta=0.0001;
+rdelta=0.0001;
+M=5;
 
 for i=1:length(f_set)
     f=f_set(1,i);
@@ -35,7 +38,7 @@ for i=1:length(f_set)
     var_RR(i)=(sum((a_est1-n1).^2)/TESTNUM+sum((a_est0-n0).^2)/TESTNUM)*0.5;
 
     %% CRRM
-    [p,rho]=cal_p_rho(e);
+    [p,rho]=cal_p_rho2(e,n,pdelta,rdelta,M);
     q=1-p;
     gldp(i)=p*q*n/((p-q)^2) + p*q*rho*n/((p-q)^2)*((n*(2*f-1)^2-1)/(n-1));
 
@@ -78,8 +81,8 @@ ylabel("MSE")
 % print -painters -dpdf -r300 var_f_nsf.pdf
 
 
-% save ./whole_f_n1k.mat var_RR var_pro est_pro0 est_pro1 est_rr0 est_rr1 ldp gldp n1 n0
-% save ./whole_f_n4k.mat var_RR var_pro est_pro0 est_pro1 est_rr0 est_rr1 ldp gldp n1 n0
-save ./whole_f_n8k.mat var_RR var_pro est_pro0 est_pro1 est_rr0 est_rr1 ldp gldp n1 n0
+% save ./whole_f_n10k.mat var_RR var_pro est_pro0 est_pro1 est_rr0 est_rr1 ldp gldp n1 n0
+% save ./whole_f_n40k.mat var_RR var_pro est_pro0 est_pro1 est_rr0 est_rr1 ldp gldp n1 n0
+save ./whole_f_n80k.mat var_RR var_pro est_pro0 est_pro1 est_rr0 est_rr1 ldp gldp n1 n0
 
 

@@ -2,7 +2,7 @@ close all
 clear
 clc
 
-N=[20,200, 2000, 20000,200000];
+N=[20,200, 2000, 20000,200000,2000000];
 load ./MSE_n_e001_f001.mat
 f=0.01;
 n1=N.*f;
@@ -106,17 +106,18 @@ var_rr_f1(3,:)=var_RR;
 % hold on
 % plot(log10(N),log10(var_pro_f1(1,:)),'-m+','LineWidth',2,'Markersize',8)
 % hold on
-% h=legend("RR","JRR ($n_1/n=0.01$)","JRR ($n_1/n=0.1$)","JRR ($n_1/n=1$)",'location','SE', Interpreter='latex');
+% h=legend("RR","JRR ($n_1/n=0.01$)","JRR ($n_1/n=0.1$)","JRR ($n_1/n=1$)",'location','NW', Interpreter='latex');
 % xlabel("$n$",Interpreter='latex')
 % ylabel("MSE")
-% set(gca,'XTick',[log10(20),log10(200),log10(2000),log10(20000),log10(200000)]);
-% set(gca,'XTickLabel',{'20','200','2000','2\times10^4','2\times10^5'});
+% set(gca,'XTick',[log10(20),log10(200),log10(2000),log10(20000),log10(200000),log10(2000000)]);
+% set(gca,'XTickLabel',{20','200','2000','2\times10^4','2\times10^5','2\times10^6'});
 % set(gca,'yTick',[4,6,8,10]);
 % set(gca,'yTickLabel',{'10^4','10^6','10^8','10^{10}'});
 % % axis([0,10, 6,12.5])
 % set(gca,'Fontsize',20,'Fontname','Times New Roman')
 % set(h,'Fontsize',15,'Fontname','Times New Roman')
-% print -painters -dpdf -r300 var_n_e0001.pdf
+% xlim([log10(15) log10(3000000)])
+% print -painters -dpdf -r300 var_n_e001.pdf
 % 
 % figure
 % plot(log10(N),log10(var_rr_f01(2,:)),'-bd','LineWidth',2,'Markersize',8)
@@ -130,35 +131,37 @@ var_rr_f1(3,:)=var_RR;
 % h=legend("RR","JRR ($n_1/n=0.01$)","JRR ($n_1/n=0.1$)","JRR ($n_1/n=1$)",'location','NW', Interpreter='latex');
 % xlabel("$n$",Interpreter='latex')
 % ylabel("MSE")
-% set(gca,'XTick',[log10(20),log10(200),log10(2000),log10(20000),log10(200000)]);
-% set(gca,'XTickLabel',{'20','200','2000','2\times10^4','2\times10^5'});
-% set(gca,'yTick',[2,4,6,8]);
+% set(gca,'XTick',[log10(20),log10(200),log10(2000),log10(20000),log10(200000),log10(2000000)]);
+% set(gca,'XTickLabel',{20','200','2000','2\times10^4','2\times10^5','2\times10^6'});
+% set(gca,'yTick',[2,4,6,8,10]);
 % set(gca,'yTickLabel',{'10^2','10^4','10^6','10^8','10^{10}'});
 % % axis([0,10, 6,12.5])
 % set(gca,'Fontsize',20,'Fontname','Times New Roman')
 % set(h,'Fontsize',15,'Fontname','Times New Roman')
-% print -painters -dpdf -r300 var_n_e001.pdf
+% xlim([log10(15) log10(3000000)])
+% print -painters -dpdf -r300 var_n_e01.pdf
 % 
 % figure
-% plot(log10(N),log10(var_rr_f01(3,:)),'-bd','LineWidth',2,'Markersize',10)
+% plot(log10(N),log10(var_rr_f01(3,:)),'-bd','LineWidth',2,'Markersize',8)
 % hold on
-% plot(log10(N),log10(var_pro_f001(3,:)),'-ro','LineWidth',2,'Markersize',10)
+% plot(log10(N),log10(var_pro_f001(3,:)),'-ro','LineWidth',2,'Markersize',8)
 % hold on
-% plot(log10(N),log10(var_pro_f01(3,:)),'-g*','LineWidth',2,'Markersize',10)
+% plot(log10(N),log10(var_pro_f01(3,:)),'-g*','LineWidth',2,'Markersize',8)
 % hold on
-% plot(log10(N),log10(var_pro_f1(3,:)),'-m+','LineWidth',2,'Markersize',10)
+% plot(log10(N),log10(var_pro_f1(3,:)),'-m+','LineWidth',2,'Markersize',8)
 % hold on
 % h=legend("RR","JRR ($n_1/n=0.01$)","JRR ($n_1/n=0.1$)","JRR ($n_1/n=1$)",'location','NW', Interpreter='latex');
 % xlabel("$n$",Interpreter='latex')
 % ylabel("MSE")
-% set(gca,'XTick',[log10(20),log10(200),log10(2000),log10(20000),log10(200000)]);
-% set(gca,'XTickLabel',{'20','200','2000','2\times10^4','2\times10^5'});
+% set(gca,'XTick',[log10(20),log10(200),log10(2000),log10(20000),log10(200000),log10(2000000)]);
+% set(gca,'XTickLabel',{20','200','2000','2\times10^4','2\times10^5','2\times10^6'});
 % set(gca,'yTick',[2,4,6,8]);
 % set(gca,'yTickLabel',{'10^2','10^4','10^6','10^8'});
+% xlim([log10(15) log10(3000000)])
 % % axis([0,10, 6,12.5])
 % set(gca,'Fontsize',20,'Fontname','Times New Roman')
 % set(h,'Fontsize',15,'Fontname','Times New Roman')
-% print -painters -dpdf -r300 var_n_e01.pdf
+% print -painters -dpdf -r300 var_n_e1.pdf
 
 
 
@@ -174,14 +177,14 @@ plot(log10(N),log10(re_pro1_f01),'-r+','LineWidth',2,'Markersize',8)
 hold on
 h=legend("RR ($n_1/n=0.01$)","JRR ($n_1/n=0.01$)","RR ($n_1/n=0.1$)","JRR ($n_1/n=0.1$)",'location','SW',Interpreter='latex');
 xlabel("$n$",Interpreter='latex')
-ylabel("MRE")
-set(gca,'XTick',[log10(20),log10(200),log10(2000),log10(20000),log10(200000)]);
-set(gca,'XTickLabel',{'20','200','2000','2\times10^4','2\times10^5'});
+ylabel("ARE")
+set(gca,'XTick',[log10(20),log10(200),log10(2000),log10(20000),log10(200000),log10(2000000)]);
+set(gca,'XTickLabel',{20','200','2000','2\times10^4','2\times10^5','2\times10^6'});
 set(gca,'YTick',[0,log10(10),log10(100),3,4,5]);
 set(gca,'yTickLabel',{'1','10','10^2','10^3','10^4','10^5'});
-% axis([0,6.5,0,5])
 set(gca,'Fontsize',20,'Fontname','Times New Roman')
 set(h,'Fontsize',14,'Fontname','Times New Roman')
+xlim([log10(15) log10(3000000)])
 print -painters -dpdf -r300 re_n_e001.pdf
 
 figure
@@ -193,16 +196,16 @@ plot(log10(N),log10(re_rr2_f01),':r+','LineWidth',2,'Markersize',8)
 hold on
 plot(log10(N),log10(re_pro2_f01),'-r+','LineWidth',2,'Markersize',8)
 hold on
-h=legend("RR ($n_1/n=0.01$)","JRR ($n_1/n=0.01$)","RR ($n_1/n=0.1$)","JRR ($n_1/n=0.1$)",'location','NE',Interpreter='latex');
+h=legend("RR ($n_1/n=0.01$)","JRR ($n_1/n=0.01$)","RR ($n_1/n=0.1$)","JRR ($n_1/n=0.1$)",'location','SW',Interpreter='latex');
 xlabel("$n$",Interpreter='latex')
-ylabel("MRE")
-set(gca,'XTick',[log10(20),log10(200),log10(2000),log10(20000),log10(200000)]);
-set(gca,'XTickLabel',{'20','200','2000','2\times10^4','2\times10^5'});
+ylabel("ARE")
+set(gca,'XTick',[log10(20),log10(200),log10(2000),log10(20000),log10(200000),log10(2000000)]);
+set(gca,'XTickLabel',{20','200','2000','2\times10^4','2\times10^5','2\times10^6'});
 set(gca,'YTick',[log10(0.1),log10(1),log10(10),log10(100),3,4]);
 set(gca,'yTickLabel',{'0.1','1','10','10^2','10^3','10^4'});
-% axis([0,6.5,-1,4])
 set(gca,'Fontsize',20,'Fontname','Times New Roman')
 set(h,'Fontsize',14,'Fontname','Times New Roman')
+xlim([log10(15) log10(3000000)])
 print -painters -dpdf -r300 re_n_e01.pdf
 
 figure
@@ -216,14 +219,14 @@ plot(log10(N),log10(re_pro4_f01),'-r+','LineWidth',2,'Markersize',8)
 hold on
 h=legend("RR ($n_1/n=0.01$)","JRR ($n_1/n=0.01$)","RR ($n_1/n=0.1$)","JRR ($n_1/n=0.1$)",'location','NE',Interpreter='latex');
 xlabel("$n$",Interpreter='latex')
-ylabel("MRE")
-set(gca,'XTick',[log10(20),log10(200),log10(2000),log10(20000),log10(200000)]);
-set(gca,'XTickLabel',{'20','200','2000','2\times10^4','2\times10^5'});
+ylabel("ARE")
+set(gca,'XTick',[log10(20),log10(200),log10(2000),log10(20000),log10(200000),log10(2000000)]);
+set(gca,'XTickLabel',{20','200','2000','2\times10^4','2\times10^5','2\times10^6'});
 set(gca,'YTick',[-2,log10(0.1),log10(1),log10(10),log10(100),3,4]);
 set(gca,'yTickLabel',{'0.01','0.1','1','10','10^2','10^3','10^4'});
-% axis([0,6.5,-2,3])
 set(gca,'Fontsize',20,'Fontname','Times New Roman')
 set(h,'Fontsize',14,'Fontname','Times New Roman')
+xlim([log10(15) log10(3000000)])
 print -painters -dpdf -r300 re_n_e1.pdf
 
 
