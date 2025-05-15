@@ -3,100 +3,96 @@ clear
 clc
 
 
-
-F=[0,0.01,0.1,0.2,0.3,0.4,0.45,0.475,0.5,0.525,0.55,0.6,0.7,0.8,0.9,0.99,1];
+F = [0, 0.01, 0.1, 0.2, 0.3, 0.4, 0.45, 0.475, 0.5, 0.525, 0.55, 0.6, 0.7, 0.8, 0.9, 0.99, 1];
 
 len = length(F);
-n=zeros(1,len)+20000;
+n = zeros(1, len) + 20000;
 
 load ./whole_f_n10k.mat
-n1=n.*F;
-n0=n-n1;
-var_pro_e(1,:)=gldp;
-var_rr_e(1,:)=ldp;
-for i=2:len-1
-    pro(i,:)=(abs(est_pro1(i,:)-n1(i))./n1(i)+abs(est_pro0(i,:)-n0(i))./n0(i))./2;
-    rr(i,:)=(abs(est_rr1(i,:)-n1(i))./n1(i)+abs(est_rr0(i,:)-n0(i))./n0(i))./2;
+n1 = n .* F;
+n0 = n - n1;
+var_pro_e(1, :) = gldp;
+var_rr_e(1, :) = ldp;
+for i = 2:len - 1
+    pro(i, :) = (abs(est_pro1(i, :)-n1(i)) ./ n1(i) + abs(est_pro0(i, :)-n0(i)) ./ n0(i)) ./ 2;
+    rr(i, :) = (abs(est_rr1(i, :)-n1(i)) ./ n1(i) + abs(est_rr0(i, :)-n0(i)) ./ n0(i)) ./ 2;
 end
-re_pro1=mean(pro,2);
-re_rr1=mean(rr,2);
+re_pro1 = mean(pro, 2);
+re_rr1 = mean(rr, 2);
 % re_pro1=mean(abs(est_pro1-n1),2);
 % re_rr1=mean(abs(est_rr1-n1),2);
 
 load ./whole_f_n40k.mat
-n1=n.*F;
-n0=n-n1;
-var_pro_e(2,:)=gldp;
-var_rr_e(2,:)=ldp;
-for i=2:len-1
-    pro(i,:)=(abs(est_pro1(i,:)-n1(i))./n1(i)+abs(est_pro0(i,:)-n0(i))./n0(i))./2;
-    rr(i,:)=(abs(est_rr1(i,:)-n1(i))./n1(i)+abs(est_rr0(i,:)-n0(i))./n0(i))./2;
+n1 = n .* F;
+n0 = n - n1;
+var_pro_e(2, :) = gldp;
+var_rr_e(2, :) = ldp;
+for i = 2:len - 1
+    pro(i, :) = (abs(est_pro1(i, :)-n1(i)) ./ n1(i) + abs(est_pro0(i, :)-n0(i)) ./ n0(i)) ./ 2;
+    rr(i, :) = (abs(est_rr1(i, :)-n1(i)) ./ n1(i) + abs(est_rr0(i, :)-n0(i)) ./ n0(i)) ./ 2;
 end
-re_pro2=mean(pro,2);
-re_rr2=mean(rr,2);
+re_pro2 = mean(pro, 2);
+re_rr2 = mean(rr, 2);
 
 load ./whole_f_n80k.mat
-n1=n.*F;
-n0=n-n1;
-var_pro_e(3,:)=gldp;
-var_rr_e(3,:)=ldp;
-for i=2:len-1
-    pro(i,:)=(abs(est_pro1(i,:)-n1(i))./n1(i)+abs(est_pro0(i,:)-n0(i))./n0(i))./2;
-    rr(i,:)=(abs(est_rr1(i,:)-n1(i))./n1(i)+abs(est_rr0(i,:)-n0(i))./n0(i))./2;
+n1 = n .* F;
+n0 = n - n1;
+var_pro_e(3, :) = gldp;
+var_rr_e(3, :) = ldp;
+for i = 2:len - 1
+    pro(i, :) = (abs(est_pro1(i, :)-n1(i)) ./ n1(i) + abs(est_pro0(i, :)-n0(i)) ./ n0(i)) ./ 2;
+    rr(i, :) = (abs(est_rr1(i, :)-n1(i)) ./ n1(i) + abs(est_rr0(i, :)-n0(i)) ./ n0(i)) ./ 2;
 end
-re_pro4=mean(pro,2);
-re_rr4=mean(rr,2);
-
-
+re_pro4 = mean(pro, 2);
+re_rr4 = mean(rr, 2);
 %% display of MSE
 figure
-plot(F,var_rr_e(1,:),'-b','LineWidth',2)
+plot(F, var_rr_e(1, :), '-b', 'LineWidth', 2)
 hold on
-plot(F,var_pro_e(1,:),'-r','LineWidth',2)
+plot(F, var_pro_e(1, :), '-r', 'LineWidth', 2)
 hold on
 % plot(log10(E),log10(var_pro_f01(1,:)),'-g*','LineWidth',2,'Markersize',10)
 % hold on
 % plot(log10(E),log10(var_pro_f1(1,:)),'-m+','LineWidth',2,'Markersize',10)
-legend("RR","JRR",'location','southeast')
-xlabel("$n_1/n$",Interpreter='latex')
+legend("RR", "JRR", 'location', 'southeast')
+xlabel("$n_1/n$", Interpreter = 'latex')
 ylabel("MSE")
 % set(gca,'yTick',[0,100,200,300,400,500,600,700,800,900,1000]);
 % set(gca,'yTickLabel',{'0','1','2','3','4','5','6','7','8','9','10'});
 ax = gca;
 ax.YAxis.Exponent = 5;
-set(gca,'Fontsize',20,'Fontname','Times New Roman')
-axis([0 1 0 1200000])
+set(gca, 'Fontsize', 20, 'Fontname', 'Times New Roman')
+axis([0, 1, 0, 1200000])
 print -vector -dpdf -r300 f_n10k.pdf
 
 figure
-plot(F,var_rr_e(2,:),'-b','LineWidth',2)
+plot(F, var_rr_e(2, :), '-b', 'LineWidth', 2)
 hold on
-plot(F,var_pro_e(2,:),'-r','LineWidth',2)
+plot(F, var_pro_e(2, :), '-r', 'LineWidth', 2)
 hold on
-legend("RR","JRR",'location','southeast')
-xlabel("$n_1/n$",Interpreter='latex')
+legend("RR", "JRR", 'location', 'southeast')
+xlabel("$n_1/n$", Interpreter = 'latex')
 ylabel("MSE")
 ax = gca;
 ax.YAxis.Exponent = 6;
-set(gca,'Fontsize',20,'Fontname','Times New Roman')
-axis([0 1 0 5000000])
+set(gca, 'Fontsize', 20, 'Fontname', 'Times New Roman')
+axis([0, 1, 0, 5000000])
 print -vector -dpdf -r300 f_n40k.pdf
 
 
 figure
-plot(F,var_rr_e(3,:),'-b','LineWidth',2)
+plot(F, var_rr_e(3, :), '-b', 'LineWidth', 2)
 hold on
-plot(F,var_pro_e(3,:),'-r','LineWidth',2)
+plot(F, var_pro_e(3, :), '-r', 'LineWidth', 2)
 hold on
-legend("RR","JRR",'location','southeast')
-xlabel("$n_1/n$",Interpreter='latex')
+legend("RR", "JRR", 'location', 'southeast')
+xlabel("$n_1/n$", Interpreter = 'latex')
 ylabel("MSE")
 ax = gca;
 ax.YAxis.Exponent = 6;
-set(gca,'Fontsize',20,'Fontname','Times New Roman')
-axis([0 1 0 10000000])
+set(gca, 'Fontsize', 20, 'Fontname', 'Times New Roman')
+axis([0, 1, 0, 10000000])
 print -vector -dpdf -r300 f_n80k.pdf
-
 
 
 % %% display of RE

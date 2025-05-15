@@ -2,20 +2,21 @@ close all
 clear
 clc
 
-
 e = exp(1);
+
 %% m/n affects the result
 n = 80000;
 m_limit = 15000;
 
 f = 0.01;
 n_1 = n * f;
+
 %% m: x-axis  optimal variance: y-axis
 x_axis_1 = [];
 y_axis_1 = [];
 for m = 0:100:m_limit
-    p = 1 - (n-1) / (n-1-m) / (e+1);
-    rho = 1 - 1/p;
+    p = 1 - (n - 1) / (n - 1 - m) / (e + 1);
+    rho = 1 - 1 / p;
 
     q = 1 - p;
     % variance
@@ -30,12 +31,13 @@ end
 
 f = 0.1;
 n_1 = n * f;
+
 %% m: x-axis  optimal variance: y-axis
 x_axis_2 = [];
 y_axis_2 = [];
 for m = 0:100:m_limit
-    p = 1 - (n-1) / (n-1-m) / (e+1);
-    rho = 1 - 1/p;
+    p = 1 - (n - 1) / (n - 1 - m) / (e + 1);
+    rho = 1 - 1 / p;
 
     q = 1 - p;
     % variance
@@ -50,12 +52,13 @@ end
 
 f = 0.2;
 n_1 = n * f;
+
 %% m: x-axis  optimal variance: y-axis
 x_axis_3 = [];
 y_axis_3 = [];
 for m = 0:100:m_limit
-    p = 1 - (n-1) / (n-1-m) / (e+1);
-    rho = 1 - 1/p;
+    p = 1 - (n - 1) / (n - 1 - m) / (e + 1);
+    rho = 1 - 1 / p;
 
     q = 1 - p;
     % variance
@@ -68,22 +71,21 @@ for m = 0:100:m_limit
 end
 
 hold on;
-plot(x_axis_1, y_axis_1, LineWidth=2,Color=[1 0 0]);
-plot(x_axis_2, y_axis_2, LineWidth=2,Color=[1 0 1]);
-plot(x_axis_3, y_axis_3, LineWidth=2,Color=[0 1 0]);
+plot(x_axis_1, y_axis_1, LineWidth = 2, Color = [1, 0, 0]);
+plot(x_axis_2, y_axis_2, LineWidth = 2, Color = [1, 0, 1]);
+plot(x_axis_3, y_axis_3, LineWidth = 2, Color = [0, 1, 0]);
 
 
-xlabel('$M$',Interpreter='latex')
+xlabel('$M$', Interpreter = 'latex')
 ylabel('MSE')
-set(gca,'FontSize',20, 'FontName', 'Times New Roman');
+set(gca, 'FontSize', 20, 'FontName', 'Times New Roman');
 ax = gca;
 ax.XAxis.Exponent = 3;
 ax.YAxis.Exponent = 4;
 
 %% RR
-p =  e/(e+1);
+p = e / (e + 1);
 q = 1 - p;
-yline(p*q*n/((p-q)^2), '--',LineWidth=2,Color=[0 0 1]);
+yline(p*q*n/((p - q)^2), '--', LineWidth = 2, Color = [0, 0, 1]);
 
-legend("JRR ($n_1/n = 0.01$)","JRR ($n_1/n = 0.1$)","JRR ($n_1/n = 0.2$)","RR",Location="northwest",Interpreter='latex')
-
+legend("JRR ($n_1/n = 0.01$)", "JRR ($n_1/n = 0.1$)", "JRR ($n_1/n = 0.2$)", "RR", Location = "northwest", Interpreter = 'latex')
