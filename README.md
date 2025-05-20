@@ -2,10 +2,14 @@
 
 Code for paper: [PETS'25] Locally Differentially Private Frequency Estimation via Joint Randomized Response
 
+DOI: [https://doi.org/10.56553/popets-2025-0097](https://doi.org/10.56553/popets-2025-0097)
+
 **Contributions:**
 
 * The first correlated randomized response mechanism for frequency estimation under LDP.
-* Theoretical analysis of privacy leakage and utility improvement by the proposed correlated perturbation model.
+* Theoretical analysis of privacy leakage and utility improvement by the proposed correlated randomization model.
+
+![Poster](/other_figures/poster.jpg)
 
 ## Code Structure and Reproduction
 
