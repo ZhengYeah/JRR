@@ -1,5 +1,5 @@
 %% see folder `effect_epsilon` for details
-%% if you want to reproduce the `.mat` files, please rerun `effect_epsilon/estimated_*.m` files first
+%% if you want to reproduce the `.mat` files, please modify parameters and rerun `effect_epsilon/effect_*.m` files first
 
 close all
 clear
