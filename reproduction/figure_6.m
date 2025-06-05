@@ -1,5 +1,5 @@
 %% see folder `effect_f` for details
-%% this is the small figures, the large figures for f = [0,1] are in `effect_f/whole_f`
+%% these are the small figures, the large figures for f = [0,1] are in `effect_f/whole_f`
 
 close all
 clear
