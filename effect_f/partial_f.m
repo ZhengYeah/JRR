@@ -6,7 +6,7 @@ addpath('../')
 % f_set=[0,0.01,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,0.99,1];
 f_set = 0.49:0.0005:0.51;
 
-n = 80000;
+n = 10000;
 e = 0.1;
 
 TESTNUM = 1000;
@@ -77,6 +77,6 @@ ylabel("MSE")
 % print -painters -dpdf -r300 var_f_nsf.pdf
 
 
-% save ./f_n1k.mat var_RR var_pro est_pro0 est_pro1 est_rr0 est_rr1 ldp gldp n1 n0
-% save ./f_n4k.mat var_RR var_pro est_pro0 est_pro1 est_rr0 est_rr1 ldp gldp n1 n0
-save ./f_n8k.mat var_RR var_pro est_pro0 est_pro1 est_rr0 est_rr1 ldp gldp n1 n0
+save ./f_n10k.mat var_RR var_pro est_pro0 est_pro1 est_rr0 est_rr1 ldp gldp n1 n0
+% save ./f_n40k.mat var_RR var_pro est_pro0 est_pro1 est_rr0 est_rr1 ldp gldp n1 n0
+% save ./f_n80k.mat var_RR var_pro est_pro0 est_pro1 est_rr0 est_rr1 ldp gldp n1 n0

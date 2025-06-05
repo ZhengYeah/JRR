@@ -1,26 +1,27 @@
+%% see folder `real_world_percentile` for details
 close all
 clear
 clc
 
-load ./estimated_EC.mat
+load ../real_world_percentile/estimated_EC.mat
 ec_pro = var_pro;
 ec_rr = var_RR;
 ec_pro_e = (abs(est_pro1-n1) ./ n1 + abs(est_pro0-n0) ./ n0) ./ 2;
 ec_rr_e = (abs(est_rr1-n1) ./ n1 + abs(est_rr0-n0) ./ n0) ./ 2;
 
-load ./estimated_Amazon.mat
+load ../real_world_percentile/estimated_Amazon.mat
 a_pro = var_pro;
 a_rr = var_RR;
 a_pro_e = (abs(est_pro1-n1) ./ n1 + abs(est_pro0-n0) ./ n0) ./ 2;
 a_rr_e = (abs(est_rr1-n1) ./ n1 + abs(est_rr0-n0) ./ n0) ./ 2;
 
-load ./estimated_Census.mat
+load ../real_world_percentile/estimated_Census.mat
 i_pro = var_pro;
 i_rr = var_RR;
 i_pro_e = (abs(est_pro1-n1) ./ n1 + abs(est_pro0-n0) ./ n0) ./ 2;
 i_rr_e = (abs(est_rr1-n1) ./ n1 + abs(est_rr0-n0) ./ n0) ./ 2;
 
-load ./estimated_Kos.mat
+load ../real_world_percentile/estimated_Kos.mat
 k_pro = var_pro;
 k_rr = var_RR;
 k_pro_e = (abs(est_pro1-n1) ./ n1 + abs(est_pro0-n0) ./ n0) ./ 2;
@@ -88,7 +89,6 @@ ylabel("Relative Error")
 set(gca, 'Fontsize', 20)
 set(h, 'Fontsize', 15)
 set(gca, 'Fontname', 'Times New Roman')
-print -vector -dpdf -r500 percentile_e001.pdf
 
 %% epsilon = 0.1
 figure
@@ -144,7 +144,6 @@ ylabel("Relative Error")
 set(gca, 'Fontsize', 20)
 % set(h,'Fontsize',15)
 set(gca, 'Fontname', 'Times New Roman')
-print -vector -dpdf -r500 percentile_e01.pdf
 
 %% epsilon = 1
 figure
@@ -200,4 +199,3 @@ ylabel("Relative Error")
 set(gca, 'Fontsize', 20)
 % set(h,'Fontsize',15)
 set(gca, 'Fontname', 'Times New Roman')
-print -vector -dpdf -r500 percentile_e1.pdf
