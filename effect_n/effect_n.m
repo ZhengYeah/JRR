@@ -3,9 +3,9 @@ clear
 clc
 
 addpath('../')
-e = 1;
 n_set = [20, 200, 2000, 20000, 200000, 2000000];
-
+% modify e = [0.01, 0.1, 1] and f = [0.01, 0.1, 1] here to regenerate *.mat files
+e = 1;
 f = 1;
 TESTNUM = 1000;
 pdelta = 0.0001;
