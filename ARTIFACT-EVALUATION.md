@@ -49,7 +49,8 @@ Commits after `3af0827` (dated June 5) are expected to work.
 
 ### Testing the Environment (Only for Functional and Reproduced Badges)
 
-To verify your environment is set up correctly, run any `.m` script from the repository. If prompted by a dialog box to change the current folder, click "Change Folder" to proceed.
+To verify your environment is set up correctly, run any `.m` script from the repository. 
+If prompted by a dialog box to change the current folder, click "Change Folder" to proceed.
 
 ## Artifact Evaluation (Only for Functional and Reproduced badges)
 
@@ -75,9 +76,11 @@ The MSE increases with $m$, but strictly lower than RR.
 
 You can reproduce these results using quick scripts in the `reproduction` folder.
 
-#### Experiment 1: Comparison with RR on Real-world Datasets
+### Experiments
 
-To reproduce the first result, cd into the `reproduction` folder and run 
+To reproduce the first result, cd into the `reproduction` folder and run the following files.
+
+#### Experiment 1: Comparison with RR on Real-world Datasets
 
 ```
 /reproduction/figure_1.m (<0.5 minute)
