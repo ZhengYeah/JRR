@@ -6,6 +6,9 @@ Contributions:
 * The first correlated randomized response mechanism for frequency estimation under LDP.
 * Theoretical analysis of privacy leakage and utility improvement by the proposed correlated perturbation model.
 
+![Poster](/other_figures/poster.jpg)
+
+
 ## Code Structure and Reproduction
 
 The main code for the RR and JRR mechanisms are as follows:
