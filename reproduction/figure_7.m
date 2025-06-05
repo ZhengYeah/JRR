@@ -1,4 +1,3 @@
-%% see folder `under_performance` for details
 close all
 clear
 clc

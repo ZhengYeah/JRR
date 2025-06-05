@@ -1,5 +1,3 @@
-%% see folder `effect_m` for details
-
 close all
 clear
 clc
