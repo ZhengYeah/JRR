@@ -109,8 +109,9 @@ To reproduce the first result, cd into the `reproduction` folder and run the fol
 #### Experiment 5: The Underperformance of JRR When $n_1/n \approx 1/2$
 
 ```
-/reproduction/figure_7.m (<3 minutes)
-/reproduction/figure_8.m (<0.5 minute)
+/reproduction/figure_7a.m (<3 minutes)
+/reproduction/figure_8a.m (<0.5 minute)
+/reproduction/figure_7b_8b.m (<0.5 minute)
 ```
 
 ## Limitations (Only for Functional and Reproduced badges)
