@@ -6,6 +6,7 @@ addpath('../');
 
 %% parameters
 E = [0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1];
+% modify n = [10k, 40k, 80k] and f = [0.01, 0.1, 1] here to regenerate *.mat files
 n = 10000;
 f = 1;
 
