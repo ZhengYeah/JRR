@@ -1,3 +1,5 @@
+%% change n = [40k, 80k] to reproduce the other two figures
+
 close all
 clear
 clc
@@ -6,6 +8,7 @@ addpath('../');
 e = 0.1;
 
 %% m/n affects the result
+% change n = [40k, 80k] to reproduce the other two figures
 n = 10000;
 f = 0.01;
 pdelta = 0.0001;
