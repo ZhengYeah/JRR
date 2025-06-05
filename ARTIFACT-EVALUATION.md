@@ -60,9 +60,9 @@ To verify your environment is set up correctly, run any `.m` script from the rep
 #### Main Result 2: Comparison with RR on Synthetic Datasets
 (Figure 3–4, Page 10-11) JRR outperforms RR in terms of MSE and ARE on synthetic datasets with varying $n$ and $\varepsilon$ parameters.
 
-#### Main Result 3: The Effect of the Heuristic Parameter on JRR
+#### Main Result 3: The Effect of $m$ on JRR
 
-(Figure 5, Pages 11) This figure shows the effect of the heuristic parameter \rho$ and $p$ on JRR. 
+(Figure 5, Pages 11) This figure shows the effect of the number of adversaries $m$ on JRR.
 The MSE increases with $m$, but strictly lower than RR.
 
 #### Main Result 4: The Effect of $n_1/n$ on JRR
@@ -73,7 +73,7 @@ The MSE increases with $m$, but strictly lower than RR.
 
 (Figure 7–8, Page 12) This figure shows the underperformance of JRR compared to RR when $n_1/n \approx 1/2$.
 
-You can reproduce these results using scripts in the `reproduction` folder.
+You can reproduce these results using quick scripts in the `reproduction` folder.
 
 #### Experiment 1: Comparison with RR on Real-world Datasets
 
@@ -91,7 +91,7 @@ To reproduce the first result, cd into the `reproduction` folder and run
 /reproduction/figure_4.m (<0.5 minute)
 ```
 
-#### Experiment 3: The Effect of the Heuristic Parameter on JRR
+#### Experiment 3: The Effect of $m$ on JRR
 
 ```
 /reproduction/figure_5.m (<0.5 minute)
