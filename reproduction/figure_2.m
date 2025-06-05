@@ -1,4 +1,5 @@
 %% see folder `real_world_percentile` for details
+%% if you want to reproduce the `.mat` files, please rerun `real_world_percentile/estimated_*.m` files first
 close all
 clear
 clc

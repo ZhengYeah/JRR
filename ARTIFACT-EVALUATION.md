@@ -32,7 +32,7 @@ Development was done using Matlab R2023a, and the artifact has been tested on bo
 
 GitHub repository: https://github.com/ZhengYeah/JRR
 
-Commits after `4c8b33f` (dated June 4) are expected to work.
+Commits after `3af0827` (dated June 5) are expected to work.
 
 ### Setting Up the Environment (Only for Functional and Reproduced Badges)
 
@@ -80,34 +80,34 @@ You can reproduce these results using scripts in the `reproduction` folder.
 To reproduce the first result, cd into the `reproduction` folder and run 
 
 ```
-/reproduction/figure_1.m
-/reproduction/figure_2.m
+/reproduction/figure_1.m (<0.5 minute)
+/reproduction/figure_2.m (<0.5 minute)
 ```
 
 #### Experiment 2: Comparison with RR on Synthetic Datasets
 
 ```
-/reproduction/figure_3.m
-/reproduction/figure_4.m
+/reproduction/figure_3.m (<0.5 minute)
+/reproduction/figure_4.m (<0.5 minute)
 ```
 
 #### Experiment 3: The Effect of the Heuristic Parameter on JRR
 
 ```
-/reproduction/figure_5.m
+/reproduction/figure_5.m (<0.5 minute)
 ```
 
 #### Experiment 4: The Effect of $n_1/n$ on JRR
 
 ```
-/reproduction/figure_6.m
+/reproduction/figure_6.m (<0.5 minute)
 ```
 
 #### Experiment 5: The Underperformance of JRR When $n_1/n \approx 1/2$
 
 ```
-/reproduction/figure_7.m
-/reproduction/figure_8.m
+/reproduction/figure_7.m (<3 minutes)
+/reproduction/figure_8.m (<0.5 minute)
 ```
 
 ## Limitations (Only for Functional and Reproduced badges)

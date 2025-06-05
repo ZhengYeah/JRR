@@ -1,4 +1,6 @@
 %% see folder `effect_n` for details
+%% if you want to reproduce the `.mat` files, please rerun `effect_n/effect_n.m` file first
+
 close all
 clear
 clc

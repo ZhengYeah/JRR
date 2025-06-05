@@ -1,4 +1,6 @@
 %% see folder `effect_epsilon` for details
+%% if you want to reproduce the `.mat` files, please rerun `effect_epsilon/estimated_*.m` files first
+
 close all
 clear
 clc
