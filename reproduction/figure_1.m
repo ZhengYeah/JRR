@@ -23,7 +23,9 @@ for epsilon_index = 2:4
         mse_ec_jrr, mse_ec_rr;
         mse_census_jrr, mse_census_rr];
     figure;
-    bar(bar_data);
+    b = bar(bar_data);
+    b(1).FaceColor = "red";
+    b(2).FaceColor = "blue";
     xlabel = {'Kosarak', 'Amazon', 'EC', 'Census'};
     set(gca, 'XTick', 1:size(bar_data, 1));
     set(gca, 'XTickLabel', xlabel);
